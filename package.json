@@ -6,7 +6,7 @@
   "author": "alebulka <bulkalessandra@outlook.com>",
   "license": "MIT",
   "scripts":{
-    
+    "start":"nodemon src/index.js"
   },
   "dependencies": {
     "@prisma/client": "^4.15.0",
