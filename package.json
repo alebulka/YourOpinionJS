@@ -5,8 +5,8 @@
   "repository": "git@github.com:alebulka/YourOpinionJS.git",
   "author": "alebulka <bulkalessandra@outlook.com>",
   "license": "MIT",
-  "scripts":{
-    "start":"nodemon src/index.js"
+  "scripts": {
+    "start": "nodemon src/index.js"
   },
   "dependencies": {
     "@prisma/client": "^4.15.0",
@@ -15,6 +15,6 @@
     "nodemon": "^2.0.22"
   },
   "devDependencies": {
-    "prisma": "^4.15.0"
+    "prisma": "^4.16.2"
   }
 }
