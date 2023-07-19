@@ -6,7 +6,8 @@
   "author": "alebulka <bulkalessandra@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/index.js",
+    "seed": "node prisma/seed.js"
   },
   "dependencies": {
     "@prisma/client": "^4.15.0",
@@ -16,8 +17,5 @@
   },
   "devDependencies": {
     "prisma": "^4.16.2"
-  },
-  "prisma": {
-    "seed": "node prisma/seed.js"
   }
 }
