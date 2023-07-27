@@ -1,15 +1,18 @@
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
+const { hash } = require('./bcrypt.js');
 
 async function clearDB(){
-  await prisma.opinions.deleteMany({where:{}}),
+  await prisma.opinions.deleteMany({where:{}});
   await prisma.users.deleteMany({where:{}})
 }
 async function populateDB(){
+  const hashedPassword = await hash('teste123');
+
   await prisma.users.createMany({
     data: [
-      {id: 1, nome:'Alessandra', email:'alessandrabulkar@gmail.com', cpf:123, senha: 'teste123'},
-      {id: 2, nome:'Paulo', email:'paulinho@gmail.com', cpf:234, senha: 'teste123'},
+      {id: 1, nome:'Alessandra', email:'alessandrabulkar@gmail.com', cpf:123, senha: hashedPassword},
+      {id: 2, nome:'Paulo', email:'paulinho@gmail.com', cpf:234, senha: hashedPassword},
     ]
   })
   await prisma.opinions.createMany({
@@ -33,3 +36,4 @@ if (process.env.NODE_ENV !== 'test') {
         await prisma.$disconnect();
       });
   }
+
