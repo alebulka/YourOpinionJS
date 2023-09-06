@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon src/index.js",
-    "seed": "node prisma/seed.js"
+    "seed": "node prisma/seed.js",
+    "docker compose up": "sudo docker compose -f docker/docker-compose.yaml --env-file docker/.env -d",
+    "migrate:run": "npx prisma migrate dev"
   },
   "dependencies": {
     "@prisma/client": "^5.0.0",
